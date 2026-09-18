@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kaitlyn Coakley | Communication & Marketing</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       GLOBAL STYLES
+    ========================== */
+
+    :root {
+      --cream: #f4f0e9;
+      --red: #e32620;
+      --black: #292827;
+      --gray: #77736e;
+      --line: #cbc5bc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .serif {
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      width: 100%;
+      padding: 38px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 45px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--gray);
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    .logo {
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--red);
+      font-size: 22px;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 85vh;
+      padding: 90px 5% 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-label {
+      color: var(--gray);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      color: var(--red);
+      font-size: clamp(75px, 13vw, 190px);
+      line-height: 0.88;
+      letter-spacing: -6px;
+    }
+
+    .hero-intro {
+      max-width: 850px;
+      margin-top: 75px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(28px, 3.2vw, 48px);
+      line-height: 1.08;
+    }
+
+    .hero-accent {
+      color: var(--red);
+      margin-top: 25px;
+    }
+
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    section {
+      padding: 120px 5%;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 25% 75%;
+      margin-bottom: 70px;
+    }
+
+    .section-number {
+      color: var(--red);
+      font-size: 14px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(55px, 8vw, 110px);
+      color: var(--red);
+      line-height: 0.95;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    #about {
+      border-top: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 25% 75%;
+    }
+
+    .about-label {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .about-content {
+      max-width: 900px;
+    }
+
+    .about-main {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1.08;
+      margin-bottom: 45px;
+    }
+
+    .about-main span {
+      color: var(--red);
+    }
+
+    .about-small {
+      max-width: 680px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #55514c;
+    }
+
+
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
+    #experience {
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 20% 30% 50%;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding 0.25s ease;
+    }
+
+    .experience-item:hover {
+      padding-left: 12px;
+    }
+
+    .experience-date {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .experience-name h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: 29px;
+      margin-bottom: 7px;
+    }
+
+    .experience-name p {
+      color: var(--red);
+      font-size: 14px;
+    }
+
+    .experience-description {
+      max-width: 620px;
+      color: #55514c;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+
+    /* FEATURED EXPERIENCE */
+
+    .featured {
+      padding: 70px 0;
+    }
+
+    .featured .experience-name h3 {
+      font-size: clamp(32px, 4vw, 55px);
+    }
+
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    #skills {
+      border-top: 1px solid var(--line);
+    }
+
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: 25% 75%;
+    }
+
+    .skills-label {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      border: 1px solid var(--black);
+      border-radius: 100px;
+      padding: 12px 20px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 18px;
+      transition: all 0.2s ease;
+    }
+
+    .skill:hover {
+      background: var(--red);
+      color: var(--cream);
+      border-color: var(--red);
+    }
+
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    #education {
+      border-top: 1px solid var(--line);
+    }
+
+    .education-content {
+      display: grid;
+      grid-template-columns: 25% 75%;
+    }
+
+    .education-year {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .education-main h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(38px, 5vw, 70px);
+      margin-bottom: 20px;
+    }
+
+    .education-main .degree {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .education-main .details {
+      color: #55514c;
+      line-height: 1.8;
+    }
+
+    .honors {
+      margin-top: 35px;
+      color: var(--red);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 23px;
+      line-height: 1.5;
+    }
+
+
+    /* =========================
+       CONNECT
+    ========================== */
+
+    #connect {
+      background: var(--red);
+      color: var(--cream);
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .connect-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.8;
+    }
+
+    .connect-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(70px, 12vw, 170px);
+      line-height: 0.9;
+      letter-spacing: -5px;
+      margin: 60px 0;
+    }
+
+    .connect-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(255,255,255,0.4);
+      padding-top: 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .contact-links a {
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px;
+    }
+
+    .contact-links a:hover {
+      border-color: var(--cream);
+    }
+
+    .footer-name {
+      opacity: 0.7;
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding-top: 25px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding-top: 50px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .section-heading,
+      .about-grid,
+      .skills-wrapper,
+      .education-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .experience-name h3 {
+        font-size: 27px;
+      }
+
+      .connect-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      section {
+        padding: 85px 5%;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#skills">skills</a>
+      <a href="#connect">connect</a>
+    </div>
+
+    <a href="#" class="logo">kaitlyn coakley</a>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <p class="hero-label">
+        Communication · Marketing · Creative Storytelling
+      </p>
+
+      <h1>
+        Kaitlyn<br>
+        Coakley
+      </h1>
+
+      <div class="hero-intro">
+        <p>
+          I am a Communication student with a passion for
+          <span style="color:#e32620;">marketing, social media, branding,</span>
+          and creating content that connects with people.
+        </p>
+
+        <p class="hero-accent">
+          I believe the best ideas start with curiosity.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2 class="section-title">about</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <p class="about-label">a little about me</p>
+
+        <div class="about-content">
+
+          <p class="about-main">
+            I'm Kaitlyn, a Communication major and Marketing minor at
+            <span>Fairfield University.</span>
+          </p>
+
+          <p class="about-small">
+            I am interested in the way communication, marketing, and
+            creativity come together to shape how people experience a
+            brand. Through my coursework, internships, work experience,
+            and campus involvement, I have developed experience in social
+            media, content creation, visual communication, customer
+            service, and collaborative work.
+            <br><br>
+            I especially enjoy finding creative ways to communicate ideas,
+            promote experiences, and connect with an audience.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2 class="section-title">experience</h2>
+      </div>
+
+
+      <div class="experience-list">
+
+
+        <!-- GLOBAL FAIRFIELD -->
+
+        <article class="experience-item featured">
+
+          <div class="experience-date">
+            Fall 2026
+          </div>
+
+          <div class="experience-name">
+            <h3>Global Fairfield</h3>
+            <p>Marketing & Promotion Intern</p>
+          </div>
+
+          <div class="experience-description">
+            I assist with campus-facing marketing and promotion efforts
+            for study abroad through social media, Life@, and email.
+            Working with the Associate Director, I help identify current
+            promotional needs and develop effective outreach designed to
+            connect Fairfield students with study abroad opportunities.
+          </div>
+
+        </article>
+
+
+        <!-- CAPTAIN'S TABLE -->
+
+        <article class="experience-item">
+
+          <div class="experience-date">
+            2023 — Present
+          </div>
+
+          <div class="experience-name">
+            <h3>Captain's Table</h3>
+            <p>Server · Chatham, MA</p>
+          </div>
+
+          <div class="experience-description">
+            Work in a fast-paced restaurant environment providing customer
+            service, managing orders and transactions, and coordinating
+            with kitchen staff. I also create social media posts and
+            stories promoting the restaurant to its Instagram audience of
+            more than 1,200 followers.
+          </div>
+
+        </article>
+
+
+        <!-- BESPOKE -->
+
+        <article class="experience-item">
+
+          <div class="experience-date">
+            2024
+          </div>
+
+          <div class="experience-name">
+            <h3>Bespoke of Winchester</h3>
+            <p>Interior Design Intern · Winchester, MA</p>
+          </div>
+
+          <div class="experience-description">
+            Supported studio operations through material and sample
+            organization, fabric and wallpaper selection, inspiration
+            boards, vendor communication, and showroom staging. The
+            experience introduced me to the creative and client-facing
+            sides of the professional design process.
+          </div>
+
+        </article>
+
+
+        <!-- DOGFISH -->
+
+        <article class="experience-item">
+
+          <div class="experience-date">
+            Summer 2023
+          </div>
+
+          <div class="experience-name">
+            <h3>Dogfish Taco Co.</h3>
+            <p>Line Worker · Chatham, MA</p>
+          </div>
+
+          <div class="experience-description">
+            Prepared customer orders in a fast-paced service environment
+            while maintaining quality, organization, cleanliness, and food
+            safety standards.
+          </div>
+
+        </article>
+
+
+        <!-- CHILLERS -->
+
+        <article class="experience-item">
+
+          <div class="experience-date">
+            Summer 2022
+          </div>
+
+          <div class="experience-name">
+            <h3>Chillers Shave Ice</h3>
+            <p>Team Member · Chatham, MA</p>
+          </div>
+
+          <div class="experience-description">
+            Prepared and served customer orders while providing efficient,
+            friendly service in a busy seasonal environment.
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2 class="section-title">skills</h2>
+      </div>
+
+      <div class="skills-wrapper">
+
+        <p class="skills-label">
+          tools + interests
+        </p>
+
+        <div class="skills-list">
+
+          <span class="skill">Social Media</span>
+          <span class="skill">Content Creation</span>
+          <span class="skill">Marketing</span>
+          <span class="skill">Communication</span>
+          <span class="skill">Canva</span>
+          <span class="skill">CapCut</span>
+          <span class="skill">iMovie</span>
+          <span class="skill">Instagram</span>
+          <span class="skill">TikTok</span>
+          <span class="skill">LinkedIn</span>
+          <span class="skill">Pinterest</span>
+          <span class="skill">Microsoft Office</span>
+          <span class="skill">Google Workspace</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <h2 class="section-title">education</h2>
+      </div>
+
+      <div class="education-content">
+
+        <p class="education-year">
+          Class of 2028
+        </p>
+
+        <div class="education-main">
+
+          <h3>Fairfield University</h3>
+
+          <p class="degree">
+            Bachelor of Arts · Communication
+            <br>
+            Minor in Marketing
+          </p>
+
+          <p class="details">
+            Fairfield, Connecticut
+            <br>
+            GPA: 3.75
+          </p>
+
+          <p class="honors">
+            Dean's List · Alpha Mu Gamma
+            <br>
+            Fairfield University Dance Ensemble
+            <br>
+            Communication Club
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONNECT
+    ========================== -->
+
+    <section id="connect">
+
+      <div>
+
+        <p class="connect-label">
+          Have an idea? Let's connect.
+        </p>
+
+        <h2 class="connect-title">
+          say hello.
+        </h2>
+
+      </div>
+
+
+      <div class="connect-bottom">
+
+        <div class="contact-links">
+
+          <a href="mailto:kaitlyn.coakley@student.fairfield.edu">
+            Email
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/kaitlyncoakley"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+        <p class="footer-name">
+          Kaitlyn Coakley · 2026
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // Smooth scrolling for navigation links
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+      link.addEventListener("click", function(event) {
+
+        const targetID = this.getAttribute("href");
+
+        if (targetID === "#") {
+          return;
+        }
+
+        const target = document.querySelector(targetID);
+
+        if (target) {
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+
+      });
+
+    });
+
+  </script>
+
+
+</body>
+</html>
